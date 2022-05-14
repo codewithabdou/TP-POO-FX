@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class MyButton extends Button {
-    private final String FONT_PATH ="C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/uipack_fixed/Font/kenvector_future.ttf";
+    private final String FONT_PATH ="C:/Users/LENOVO/Documents/JAVA/TP-POO-FX/ressources/kenvector_future.ttf";
     public MyButton(String text,int x ,int y){
         setText(text);
         setFont();
