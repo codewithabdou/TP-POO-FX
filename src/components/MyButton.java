@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class MyButton extends Button {
-    private final String FONT_PATH ="C:/Users/LENOVO/Documents/JAVA/TP-POO-FX/ressources/kenvector_future.ttf";
+    private final String FONT_PATH ="ressources/kenvector_future.ttf";
     public MyButton(String text,int x ,int y){
         setText(text);
         setFont();
@@ -38,7 +38,7 @@ public class MyButton extends Button {
 
         setPrefHeight(45);
         setLayoutY(getLayoutY()+4);
-        Image image=new Image("C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/yellow_button01.png");
+        Image image=new Image("file:ressources/yellow_button01.png");
         Background background=new Background(new BackgroundImage(image,BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER,BackgroundSize.DEFAULT));
         setBackground(background);
     }
@@ -46,7 +46,7 @@ public class MyButton extends Button {
     private void setReleasedStyle(){
         setPrefHeight(49);
         setLayoutY(getLayoutY()-4);
-        Image image=new Image("C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/yellow_button00.png");
+        Image image=new Image("file:ressources/yellow_button00.png");
         Background background=new Background(new BackgroundImage(image,BackgroundRepeat.REPEAT,BackgroundRepeat.REPEAT,BackgroundPosition.CENTER,BackgroundSize.DEFAULT));
         setBackground(background);
 

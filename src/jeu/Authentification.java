@@ -30,6 +30,7 @@ public class Authentification {
     private MyButton identifierButton;
     private MySubScene inscrireSubScene;
     private MySubScene identifierSubScene;
+    private final String FONT_PATH="ressources/kenvector_future.ttf";
 
     // lazem nzidou fonction ta7kam l fichier te3 les joueurs w a y7othom f arraylist te3 les joueurs
 
@@ -50,7 +51,7 @@ public class Authentification {
 
     private void createBackground() {
         Background background = new Background(new BackgroundImage(
-                new Image("C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/black.png", 256,
+                new Image("file:ressources/black.png", 256,
                         256, false, true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, null));
         root.setBackground(background);
@@ -89,7 +90,7 @@ public class Authentification {
         try {
             usernameLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             usernameLabel.setFont(Font.font("Verdana", 16));
@@ -101,7 +102,7 @@ public class Authentification {
         try {
             usernameTextField.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             usernameTextField.setFont(Font.font("Verdana", 16));
@@ -113,7 +114,7 @@ public class Authentification {
         try {
             passwordLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             passwordLabel.setFont(Font.font("Verdana", 16));
@@ -125,7 +126,7 @@ public class Authentification {
         try {
             passwordTextField.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             passwordTextField.setFont(Font.font("Verdana", 16));
@@ -137,7 +138,7 @@ public class Authentification {
         try {
             confirmationLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             confirmationLabel.setFont(Font.font("Verdana", 16));
@@ -149,7 +150,7 @@ public class Authentification {
         try {
             confirmationTextField.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             confirmationTextField.setFont(Font.font("Verdana", 16));
@@ -185,7 +186,7 @@ public class Authentification {
         try {
             usernameLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             usernameLabel.setFont(Font.font("Verdana", 16));
@@ -197,7 +198,7 @@ public class Authentification {
         try {
             usernameTextField.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             usernameTextField.setFont(Font.font("Verdana", 16));
@@ -209,7 +210,7 @@ public class Authentification {
         try {
             passwordLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             passwordLabel.setFont(Font.font("Verdana", 16));
@@ -221,7 +222,7 @@ public class Authentification {
         try {
             passwordTextField.setFont(Font.loadFont(
                     new FileInputStream(new File(
-                            "C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/kenvector_future.ttf")),
+                            FONT_PATH)),
                     16));
         } catch (FileNotFoundException e) {
             passwordTextField.setFont(Font.font("Verdana", 16));

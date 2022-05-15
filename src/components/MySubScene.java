@@ -8,7 +8,7 @@ import javafx.scene.layout.*;
 import javafx.util.Duration;
 
 public class MySubScene extends SubScene {
-    private final String BACKGROUND_PATH ="C:/Users/LENOVO/Desktop/TP-POO-FX/TP/ressources/yellow_panel.png";
+    private final String BACKGROUND_PATH ="file:ressources/yellow_panel.png";
     private  boolean isHidden;
     public MySubScene(int x , int y ,int w,int h) {
         super(new AnchorPane(),w,h);
