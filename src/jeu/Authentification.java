@@ -1,9 +1,18 @@
 package jeu;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.UUID;
 
+import application.Joueur;
 import components.MyButton;
 import components.MySubScene;
 import javafx.event.ActionEvent;
@@ -30,9 +39,11 @@ public class Authentification {
     private MyButton identifierButton;
     private MySubScene inscrireSubScene;
     private MySubScene identifierSubScene;
-    private final String FONT_PATH="ressources/kenvector_future.ttf";
+    private ArrayList<Joueur> joueurs = new ArrayList<>();
+    private final String FONT_PATH = "ressources/kenvector_future.ttf";
 
-    // lazem nzidou fonction ta7kam l fichier te3 les joueurs w a y7othom f arraylist te3 les joueurs
+    // lazem nzidou fonction ta7kam l fichier te3 les joueurs w a y7othom f
+    // arraylist te3 les joueurs
 
     public Authentification(Stage stage) {
         this.stage = stage;
@@ -40,6 +51,10 @@ public class Authentification {
         createBackground();
         createButtons();
         createSubScenes();
+        loadPlayers();
+        for (Joueur joueur : joueurs) {
+            System.out.println(joueur.getNom());
+        }
     }
 
     private void initializeView() {
@@ -58,7 +73,7 @@ public class Authentification {
     }
 
     private void createButtons() {
-        inscrireButton = new MyButton("S'inscrire", 150, 380);
+        inscrireButton = new MyButton("Sign up", 150, 380);
         inscrireButton.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 if (!identifierSubScene.getIsHidden())
@@ -66,7 +81,7 @@ public class Authentification {
                 inscrireSubScene.move(WINDOW_WIDTH);
             }
         });
-        identifierButton = new MyButton("S'identifier", 150, 300);
+        identifierButton = new MyButton("Sign in", 150, 300);
         identifierButton.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 if (!inscrireSubScene.getIsHidden())
@@ -74,7 +89,13 @@ public class Authentification {
                 identifierSubScene.move(WINDOW_WIDTH);
             }
         });
-        root.getChildren().addAll(inscrireButton, identifierButton);
+        MyButton quitButton = new MyButton("Quit", 150, 460);
+        quitButton.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                stage.close();
+            }
+        });
+        root.getChildren().addAll(inscrireButton, identifierButton, quitButton);
     }
 
     private void createSubScenes() {
@@ -84,7 +105,7 @@ public class Authentification {
 
     private void createInscrireSubScene() {
         inscrireSubScene = new MySubScene(WINDOW_WIDTH, (WINDOW_HEIGHT - 500) / 2, 500, 500);
-        Label usernameLabel = new Label("Nom d'utilisateur : ");
+        Label usernameLabel = new Label("user name : ");
         usernameLabel.setLayoutX(30);
         usernameLabel.setLayoutY(120);
         try {
@@ -108,7 +129,7 @@ public class Authentification {
             usernameTextField.setFont(Font.font("Verdana", 16));
         }
 
-        Label passwordLabel = new Label("Mot de passe : ");
+        Label passwordLabel = new Label("password : ");
         passwordLabel.setLayoutX(30);
         passwordLabel.setLayoutY(170);
         try {
@@ -156,16 +177,33 @@ public class Authentification {
             confirmationTextField.setFont(Font.font("Verdana", 16));
         }
 
-        MyButton confirmButton = new MyButton("Confirmer", (500 - 190) / 2, 350);
+        MyButton confirmButton = new MyButton("Confirm", (500 - 190) / 2, 350);
 
         confirmButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent evnet){
-                // hna nverifou whd les conditions 
-                //ida mverfyin najoutouh lel fichier te3na sinon ndiroulh message
-                Jeu jeu = new Jeu(stage, usernameTextField.getText());
+            public void handle(ActionEvent evnet) {
+                Joueur joueur = new Joueur(usernameTextField.getText(), passwordTextField.getText(),
+                        UUID.randomUUID().toString());
+                if (!verifyPlayerExistence(joueur)
+                        && confirmationTextField.getText().compareTo(passwordTextField.getText()) == 0
+                        && passwordTextField.getText().length() >= 8 && joueur.getNom().length() >= 3) {
+                    ObjectOutputStream out;
+                    try {
+                        out = new ObjectOutputStream(
+                                new BufferedOutputStream(new FileOutputStream(new File("Joueurs.dat"))));
+                        for (Joueur joueur2 : joueurs) {
+                            out.writeObject(joueur2);
+                        }
+                        out.writeObject(joueur);
+                        out.close();
+                        Jeu jeu = new Jeu(stage, joueur);
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
 
-            } 
-         });
+            }
+        });
 
         inscrireSubScene.addToPane(confirmButton);
         inscrireSubScene.addToPane(confirmationLabel);
@@ -180,7 +218,7 @@ public class Authentification {
 
     private void createIdentifierSubScene() {
         identifierSubScene = new MySubScene(WINDOW_WIDTH, (WINDOW_HEIGHT - 500) / 2, 500, 500);
-        Label usernameLabel = new Label("Nom d'utilisateur : ");
+        Label usernameLabel = new Label("user name : ");
         usernameLabel.setLayoutX(30);
         usernameLabel.setLayoutY(120);
         try {
@@ -204,7 +242,7 @@ public class Authentification {
             usernameTextField.setFont(Font.font("Verdana", 16));
         }
 
-        Label passwordLabel = new Label("Mot de passe : ");
+        Label passwordLabel = new Label("password : ");
         passwordLabel.setLayoutX(30);
         passwordLabel.setLayoutY(170);
         try {
@@ -228,14 +266,17 @@ public class Authentification {
             passwordTextField.setFont(Font.font("Verdana", 16));
         }
 
-        MyButton confirmButton = new MyButton("Continuer", (500 - 190) / 2, 350);
+        MyButton confirmButton = new MyButton("Continue", (500 - 190) / 2, 350);
 
         confirmButton.setOnAction(new EventHandler<ActionEvent>() {
-           public void handle(ActionEvent evnet){
-               // nverifou est ce que sah yexister fel arraylist te3na
-               // ida yexister ncreeou object Jeu w ida myexistich beyna ndiroulh kch message w sayi
-               Jeu jeu = new Jeu(stage, usernameTextField.getText());
-           } 
+            public void handle(ActionEvent evnet) {
+                if (getSelectedPlayer(usernameTextField.getText()) != null) {
+                    Joueur joueur = getSelectedPlayer(usernameTextField.getText());
+                    if (joueur.getPassword().compareTo(passwordTextField.getText()) == 0) {
+                        Jeu jeu = new Jeu(stage, joueur);
+                    }
+                }
+            }
         });
 
         identifierSubScene.addToPane(confirmButton);
@@ -244,6 +285,42 @@ public class Authentification {
         identifierSubScene.addToPane(passwordLabel);
         identifierSubScene.addToPane(passwordTextField);
         root.getChildren().add(identifierSubScene);
+    }
+
+    private void loadPlayers() {
+        try {
+            ObjectInputStream in = new ObjectInputStream(
+                    new BufferedInputStream(new FileInputStream(new File("Joueurs.dat"))));
+            boolean canRead = true;
+            while (canRead) {
+                try {
+                    joueurs.add((Joueur) in.readObject());
+                } catch (ClassNotFoundException e) {
+                    canRead = false;
+                    e.printStackTrace();
+                }
+            }
+        } catch (IOException e) {
+            //e.printStackTrace();
+        }
+    }
+
+    private boolean verifyPlayerExistence(Joueur joueur) {
+        for (Joueur joueur2 : joueurs) {
+            if (joueur2.getNom().compareTo(joueur.getNom()) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Joueur getSelectedPlayer(String name) {
+        for (Joueur joueur : joueurs) {
+            if (joueur.getNom().compareTo(name) == 0) {
+                return joueur;
+            }
+        }
+        return null;
     }
 
 }
