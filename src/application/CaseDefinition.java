@@ -31,9 +31,6 @@ public class CaseDefinition extends CaseQuestion {
 
 	public void nouvelleQuestion(Plateau plateau) {
 
-		this.definition = plateau.getDefinitions(nbr + 4);
-		this.mot = plateau.getDefinitions(nbr + 4);
-		nbr++;
 	};
 
 	// public void verifieReponse() {} ;

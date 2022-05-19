@@ -9,9 +9,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Plateau">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="1276.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControleurPlateau">
    <children>
-      <Button fx:id="button1" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button" AnchorPane.bottomAnchor="660.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="954.0" AnchorPane.topAnchor="10.0">
+      <Button fx:id="button1" alignment="CENTER" layoutX="330.0" layoutY="523.0" minWidth="30.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="40.0" prefWidth="112.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -21,7 +21,7 @@
          <rotationAxis>
             <Point3D />
          </rotationAxis></Button>
-      <Button fx:id="button4" alignment="CENTER" layoutX="220.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button4" alignment="CENTER" layoutX="155.0" layoutY="518.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -32,7 +32,7 @@
             <Point3D />
          </rotationAxis>
       </Button>
-      <Button fx:id="button3" alignment="CENTER" layoutX="150.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button3" alignment="CENTER" layoutX="211.0" layoutY="518.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -43,7 +43,7 @@
             <Point3D />
          </rotationAxis>
       </Button>
-      <Button fx:id="button2" alignment="CENTER" layoutX="80.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button2" alignment="CENTER" layoutX="273.0" layoutY="518.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -54,7 +54,7 @@
             <Point3D />
          </rotationAxis>
       </Button>
-      <Button fx:id="button37" layoutX="80.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button37" layoutX="801.0" layoutY="448.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -62,7 +62,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button40" layoutX="290.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button40" layoutX="619.0" layoutY="448.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -70,7 +70,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button39" layoutX="220.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button39" layoutX="679.0" layoutY="448.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -78,7 +78,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button38" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button38" layoutX="738.0" layoutY="448.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -86,7 +86,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button36" layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button36" layoutX="870.0" layoutY="448.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -94,7 +94,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button35" layoutX="10.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button35" layoutX="912.0" layoutY="412.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -102,7 +102,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button66" layoutX="220.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button66" layoutX="827.0" layoutY="105.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -110,7 +110,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button65" layoutX="150.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button65" layoutX="767.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -118,7 +118,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button64" layoutX="80.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button64" layoutX="707.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -126,7 +126,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button63" layoutX="80.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button63" layoutX="642.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -134,7 +134,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button86" layoutX="290.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button86" layoutX="363.0" layoutY="166.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -142,7 +142,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button85" layoutX="220.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button85" layoutX="303.0" layoutY="166.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -150,7 +150,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button84" layoutX="150.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button84" layoutX="244.0" layoutY="164.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -158,7 +158,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button34" layoutX="10.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button34" layoutX="912.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -166,7 +166,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button33" layoutX="10.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button33" layoutX="912.0" layoutY="291.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -174,7 +174,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button96" layoutX="220.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button96" layoutX="610.0" layoutY="267.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -182,7 +182,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button83" layoutX="150.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button83" layoutX="192.0" layoutY="191.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -190,7 +190,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button62" layoutX="80.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button62" layoutX="582.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -198,7 +198,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button61" layoutX="80.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button61" layoutX="522.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -206,7 +206,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button97" layoutX="290.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button97" layoutX="550.0" layoutY="267.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -214,7 +214,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button95" layoutX="220.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button95" layoutX="670.0" layoutY="267.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -222,7 +222,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button82" layoutX="150.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button82" layoutX="192.0" layoutY="248.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -230,7 +230,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button32" layoutX="10.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button32" layoutX="912.0" layoutY="235.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -238,18 +238,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button7" alignment="CENTER" layoutX="430.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <rotationAxis>
-            <Point3D />
-         </rotationAxis>
-      </Button>
-      <Button fx:id="button6" alignment="CENTER" layoutX="360.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button7" alignment="CENTER" layoutX="34.0" layoutY="446.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -260,7 +249,7 @@
             <Point3D />
          </rotationAxis>
       </Button>
-      <Button fx:id="button8" alignment="CENTER" layoutX="500.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button6" alignment="CENTER" layoutX="40.0" layoutY="504.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -271,7 +260,7 @@
             <Point3D />
          </rotationAxis>
       </Button>
-      <Button fx:id="button5" alignment="CENTER" layoutX="290.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button8" alignment="CENTER" layoutX="29.0" layoutY="387.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -282,15 +271,18 @@
             <Point3D />
          </rotationAxis>
       </Button>
-      <Button fx:id="button42" layoutX="430.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button5" alignment="CENTER" layoutX="100.0" layoutY="517.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
       </Button>
-      <Button fx:id="button41" layoutX="360.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button42" layoutX="499.0" layoutY="448.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -298,7 +290,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button43" layoutX="500.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button41" layoutX="559.0" layoutY="447.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -306,7 +298,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button67" layoutX="290.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button43" layoutX="438.0" layoutY="448.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -314,7 +306,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button70" layoutX="500.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button67" layoutX="834.0" layoutY="164.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -322,7 +314,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button69" layoutX="430.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button70" layoutX="834.0" layoutY="329.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -330,7 +322,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button60" layoutX="80.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button69" layoutX="837.0" layoutY="273.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -338,7 +330,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button94" layoutX="220.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button60" layoutX="462.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -346,7 +338,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button81" layoutX="150.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button94" layoutX="730.0" layoutY="267.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -354,7 +346,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button31" layoutX="10.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button81" layoutX="193.0" layoutY="308.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -362,7 +354,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button30" layoutX="10.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button31" layoutX="912.0" layoutY="181.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -370,7 +362,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button79" layoutX="220.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button30" layoutX="912.0" layoutY="128.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -378,7 +370,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button80" layoutX="150.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button79" layoutX="289.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -386,7 +378,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button59" layoutX="80.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button80" layoutX="227.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -394,7 +386,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button58" layoutX="80.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button59" layoutX="402.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -402,7 +394,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button56" layoutX="220.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button58" layoutX="343.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -410,7 +402,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button57" layoutX="150.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button56" layoutX="220.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -418,7 +410,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button29" layoutX="10.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button57" layoutX="282.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -426,7 +418,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button90" layoutX="430.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button29" layoutX="912.0" layoutY="71.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -434,7 +426,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button99" layoutX="360.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button90" layoutX="603.0" layoutY="166.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -442,7 +434,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button73" layoutX="500.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button99" layoutX="430.0" layoutY="267.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -450,7 +442,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button100" layoutX="290.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button73" layoutX="650.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -458,7 +450,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button91" layoutX="430.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button100" layoutX="307.0" layoutY="267.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="118.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -466,7 +458,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button92" layoutX="360.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button91" layoutX="663.0" layoutY="166.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -474,7 +466,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button74" layoutX="500.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button92" layoutX="725.0" layoutY="165.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -482,7 +474,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button93" layoutX="290.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button74" layoutX="593.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -490,7 +482,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button78" layoutX="290.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button93" layoutX="740.0" layoutY="214.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -498,7 +490,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button77" layoutX="360.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button78" layoutX="353.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -506,7 +498,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button75" layoutX="500.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button77" layoutX="413.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -514,7 +506,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button76" layoutX="430.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button75" layoutX="533.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -522,7 +514,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button53" layoutX="430.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button76" layoutX="473.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -530,7 +522,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button54" layoutX="360.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button53" layoutX="105.0" layoutY="172.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -538,7 +530,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button52" layoutX="500.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button54" layoutX="106.0" layoutY="105.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -546,7 +538,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button55" layoutX="290.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button52" layoutX="106.0" layoutY="232.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -554,7 +546,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button88" layoutX="430.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button55" layoutX="164.0" layoutY="90.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -562,7 +554,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button68" layoutX="360.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button88" layoutX="483.0" layoutY="164.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -570,7 +562,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button87" layoutX="360.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button68" layoutX="834.0" layoutY="216.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -578,7 +570,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button71" layoutX="500.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button87" layoutX="423.0" layoutY="166.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -586,7 +578,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button98" layoutX="360.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button71" layoutX="779.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -594,7 +586,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button72" layoutX="500.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button98" layoutX="490.0" layoutY="267.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -602,7 +594,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button89" layoutX="430.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button72" layoutX="712.0" layoutY="354.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -610,7 +602,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button27" layoutX="80.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button89" layoutX="543.0" layoutY="166.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -618,7 +610,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button25" layoutX="220.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button27" layoutX="819.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -626,7 +618,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button26" layoutX="150.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button25" layoutX="697.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -634,7 +626,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button28" layoutX="10.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button26" layoutX="757.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -642,7 +634,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button22" layoutX="430.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button28" layoutX="884.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -650,7 +642,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button23" layoutX="360.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button22" layoutX="515.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -658,7 +650,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button21" layoutX="500.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button23" layoutX="577.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -666,7 +658,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button24" layoutX="290.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button21" layoutX="457.0" layoutY="18.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -674,7 +666,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button9" alignment="CENTER" layoutX="574.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button24" layoutX="637.0" layoutY="21.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -682,7 +674,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button10" alignment="CENTER" layoutX="644.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button9" alignment="CENTER" layoutX="29.0" layoutY="331.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -690,7 +682,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button44" layoutX="574.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button10" alignment="CENTER" layoutX="29.0" layoutY="275.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -698,7 +690,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button11" layoutX="644.0" layoutY="80.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button44" layoutX="376.0" layoutY="447.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -706,7 +698,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button12" layoutX="644.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button11" layoutX="34.0" layoutY="224.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -714,7 +706,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button45" layoutX="574.0" layoutY="150.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button12" layoutX="29.0" layoutY="168.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -722,7 +714,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button48" layoutX="574.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button45" layoutX="316.0" layoutY="447.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -730,7 +722,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button15" layoutX="644.0" layoutY="360.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button48" layoutX="127.0" layoutY="448.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -738,7 +730,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button49" layoutX="574.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button15" layoutX="89.0" layoutY="18.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -746,7 +738,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button16" layoutX="644.0" layoutY="430.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button49" layoutX="105.0" layoutY="397.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -754,7 +746,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button17" layoutX="644.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button16" layoutX="155.0" layoutY="18.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -762,7 +754,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button50" layoutX="574.0" layoutY="500.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button17" layoutX="213.0" layoutY="16.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -770,7 +762,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button51" layoutX="574.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button50" layoutX="106.0" layoutY="340.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -778,7 +770,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button18" layoutX="644.0" layoutY="570.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button51" layoutX="106.0" layoutY="283.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -786,7 +778,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button46" layoutX="574.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button18" layoutX="276.0" layoutY="15.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -794,7 +786,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button13" layoutX="644.0" layoutY="220.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button46" layoutX="257.0" layoutY="447.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -802,7 +794,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button14" layoutX="644.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button13" layoutX="29.0" layoutY="105.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -810,7 +802,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button47" layoutX="574.0" layoutY="290.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button14" layoutX="34.0" layoutY="46.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -818,7 +810,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button20" layoutX="574.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button47" layoutX="195.0" layoutY="448.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -826,7 +818,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button19" layoutX="644.0" layoutY="640.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 100;" text="Button">
+      <Button fx:id="button20" layoutX="394.0" layoutY="16.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -834,18 +826,25 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fx:id="de1" fitHeight="90.0" fitWidth="92.0" layoutX="796.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="de11" fitHeight="68.0" fitWidth="88.0" layoutX="790.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="button19" layoutX="335.0" layoutY="16.0" mnemonicParsing="false" onAction="#actionBouton" prefHeight="50.0" prefWidth="55.0" style="-fx-background-radius: 100;" text="Button">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fx:id="de11" fitHeight="68.0" fitWidth="88.0" layoutX="1152.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Downloads/de6.PNG" />
          </image>
       </ImageView>
-      <ImageView fx:id="de2" fitHeight="75.0" fitWidth="66.0" layoutX="888.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="de2" fitHeight="75.0" fitWidth="66.0" layoutX="1081.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Downloads/de6.PNG" />
          </image>
       </ImageView>
-      <Button fx:id="buttonLancerDes" layoutX="815.0" layoutY="173.0" mnemonicParsing="false" onAction="#lancerDes" prefHeight="26.0" prefWidth="118.0" text="Lancer Dès " />
-      <Label fx:id="label" contentDisplay="CENTER" layoutX="815.0" layoutY="115.0" prefHeight="39.0" prefWidth="118.0" text="Resultat" textAlignment="JUSTIFY" />
+      <Button fx:id="buttonLancerDes" layoutX="1093.0" layoutY="206.0" mnemonicParsing="false" onAction="#lancerDes" prefHeight="26.0" prefWidth="118.0" text="Lancer Dès " />
+      <Label fx:id="label" contentDisplay="CENTER" layoutX="1093.0" layoutY="166.0" prefHeight="39.0" prefWidth="118.0" text="Resultat" textAlignment="JUSTIFY" />
    </children>
 </AnchorPane>

@@ -53,7 +53,7 @@ public class Authentification {
         createSubScenes();
         loadPlayers();
         for (Joueur joueur : joueurs) {
-            System.out.println(joueur.getNom());
+            System.out.println(joueur.getID());
         }
     }
 
