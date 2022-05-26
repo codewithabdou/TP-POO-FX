@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import application.ControllerJeu;
 import application.Joueur;
-import application.Plateau;
 import components.MyButton;
 import components.MySubScene;
 import javafx.event.ActionEvent;
@@ -95,9 +94,8 @@ public class Jeu {
                         Authentification authentification = new Authentification(stage);
                     } else if (button.equals(menuButtons.get(4))) {
                         ControllerJeu jeu=new ControllerJeu();
-                        stage.setFullScreen(true);
                         try {
-                            jeu.commencer(event);
+                            jeu.commencer(stage);
                         } catch (IOException e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
