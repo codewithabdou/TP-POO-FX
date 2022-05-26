@@ -12,6 +12,7 @@ public class App extends Application {
         stage.setTitle("TP POO");
         stage.setResizable(false);
         Authentification game = new Authentification(stage);
+        
     }
 
     public static void main(String[] args) {

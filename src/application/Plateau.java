@@ -16,7 +16,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class Plateau {
-
+    private Joueur joueur ;
 	private static int num = 0;
 	private int ID;
 	private int  caseActuelle = 0;
@@ -118,5 +118,9 @@ public class Plateau {
 	public void setCaseActuelle(int caseActuelle) {
 		this.caseActuelle = caseActuelle;
 	}
+
+    public Joueur getJoueur() {
+        return this.joueur;
+    }
 
 }

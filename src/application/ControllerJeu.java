@@ -30,17 +30,16 @@ private Parent root ;
 @FXML
 private AnchorPane scenePane ;
 
-public void commencer(ActionEvent e) throws IOException {
+public void commencer(Stage stage) throws IOException {
 	Plateau plateau=new Plateau() ;
 	plateau.initiallisation();
 	FXMLLoader loader = new FXMLLoader(getClass().getResource("scenePlateau.fxml")) ; 
 	root = loader.load();
 	ControleurPlateau ControleurPlateau = loader.getController() ;
 	ControleurPlateau.init( plateau);
-	stage =(Stage)((Node)e.getSource()).getScene().getWindow() ; //switch entere les deux scenes
-	scene = new Scene(root,1024,720);
+	this.stage=stage; 
+	scene = new Scene(root);
 	stage.setScene(scene);
-	stage.show() ;
 	
 	
 }
