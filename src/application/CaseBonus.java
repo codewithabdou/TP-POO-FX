@@ -8,8 +8,6 @@ public class CaseBonus extends  Case{
 	   public void action(Plateau plateau , Joueur joueur) {
 		   joueur.setScoreActuel(joueur.getScoreActuel()+10);
 		   plateau.setCaseActuelle(plateau.getCaseActuelle()+2) ;
-		   System.out.println("vous venez de gagner +10 points " );
-		   System.out.println("vous venez d'avancer de +2 cases " );
 	   };
 
 	   @Override

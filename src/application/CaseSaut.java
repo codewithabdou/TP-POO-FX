@@ -12,8 +12,7 @@ public class CaseSaut extends Case {
 	public void action(Plateau plateau, Joueur joueur) {
 		Random random = new Random();
 		int nb = random.nextInt(100);
-		//plateau.setCaseActuelle(nb);
-		System.out.println("Vous etes maintenant dans la case :"+nb);
+		plateau.setCaseActuelle(nb);
 	}
 
 	@Override

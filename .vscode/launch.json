@@ -8,15 +8,15 @@
             "type": "java",
             "name": "Launch App",
             "request": "launch",
-            "vmArgs": "--module-path \"C:/Users/CBS Computer/Downloads/openjfx-18.0.1_windows-x64_bin-sdk/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
             "mainClass": "App",
-            "projectName": "TP-POO-FX_2205e194"
+            "projectName": "TP-POO-FX_a81780d0"
         },
         {
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "${file}",
-        },
+            "mainClass": "${file}"
+        }
     ]
 }

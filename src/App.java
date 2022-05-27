@@ -1,8 +1,9 @@
 import java.io.IOException;
 
+import application.Joueur;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import jeu.Authentification;
+import jeu.Jeu;
 
 
 public class App extends Application {
@@ -11,7 +12,8 @@ public class App extends Application {
         stage=new Stage();
         stage.setTitle("TP POO");
         stage.setResizable(false);
-        Authentification game = new Authentification(stage);
+        stage.centerOnScreen();
+        Jeu game = new Jeu(stage,new Joueur("nom", "password", "ID"));
         
     }
 

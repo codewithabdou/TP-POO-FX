@@ -6,11 +6,10 @@ public class CaseDefinition extends CaseQuestion {
 
 	private final String couleur = "bleu";
 	private String definition;
-	private static int nbr = 0;
 
 	@Override
 	public void action(Plateau plateau, Joueur joueur) {
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		if (dejaParcourue = true) {
 			nouvelleQuestion(plateau);
 		}
@@ -26,6 +25,7 @@ public class CaseDefinition extends CaseQuestion {
 			System.out.println("vous venez de perdre -10 points ");
 		}
 		dejaParcourue = true;
+		sc.close();*/
 
 	};
 

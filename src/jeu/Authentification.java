@@ -42,8 +42,6 @@ public class Authentification {
     private ArrayList<Joueur> joueurs = new ArrayList<>();
     private final String FONT_PATH = "ressources/kenvector_future.ttf";
 
-    // lazem nzidou fonction ta7kam l fichier te3 les joueurs w a y7othom f
-    // arraylist te3 les joueurs
 
     public Authentification(Stage stage) {
         this.stage = stage;
@@ -197,7 +195,6 @@ public class Authentification {
                         out.close();
                         Jeu jeu = new Jeu(stage, joueur);
                     } catch (IOException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                 }

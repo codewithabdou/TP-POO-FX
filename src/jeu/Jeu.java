@@ -3,12 +3,14 @@ package jeu;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import application.ControllerJeu;
+import application.ControleurPlateau;
 import application.Joueur;
+import application.Plateau;
 import components.MyButton;
 import components.MySubScene;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -93,16 +95,13 @@ public class Jeu {
                     if (button.equals(menuButtons.get(3))) {
                         Authentification authentification = new Authentification(stage);
                     } else if (button.equals(menuButtons.get(4))) {
-                        ControllerJeu jeu=new ControllerJeu();
-                        try {
-                            jeu.commencer(stage);
-                        } catch (IOException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                        }
+                        stage.close();
+                    } else if (button.equals(menuButtons.get(0))) {
+                        commencer();
                     } else {
                         for (MySubScene subScene : menuSubScenes) {
-                            if (!subScene.getIsHidden() || subScene.equals(menuSubScenes.get(menuButtons.indexOf(button)))){
+                            if (!subScene.getIsHidden()
+                                    || subScene.equals(menuSubScenes.get(menuButtons.indexOf(button)))) {
                                 subScene.move(WINDOW_WIDTH);
                                 System.out.println(menuSubScenes.indexOf(subScene));
                             }
@@ -114,5 +113,19 @@ public class Jeu {
         }
     }
 
-
+    private void commencer(){
+        Plateau plateau=new Plateau(joueur ) ;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("scenePlateau.fxml")) ; 
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ControleurPlateau ControleurPlateau = loader.getController() ;
+        ControleurPlateau.init( plateau);
+        stage.setResizable(true);
+        stage.setScene(new Scene(root));
+        stage.setFullScreen(true);
+    }
+    
 }

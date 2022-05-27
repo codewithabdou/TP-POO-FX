@@ -9,7 +9,7 @@ public class CaseFin extends Case {
 
     private  final String couleur="noir";
     public void action(Plateau plateau , Joueur joueur ){
-    	System.out.println("vous");
+    	plateau.setIsOver(true);
     }
     @Override
     public String toString() {

@@ -5,31 +5,28 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.stage.Stage;
 
 public class Plateau {
     private Joueur joueur ;
+	private boolean isOver=false;
 	private static int num = 0;
-	private int ID;
+	// private int ID;
 	private int  caseActuelle = 0;
 	Case[] cases = new Case[100];
     private String[] definitions = new String[10];
 	private String[] motDefinitions = new String[10];
-	private String[] images = new String[10];
-	private String[] motImages = {"coffee","orange","eggs","ff","kkk"};
-	private Integer  resultatDes ;
+	// private String[] images = new String[10];
+	// private String[] motImages = {"coffee","orange","eggs","ff","kkk"};
+	// private Integer  resultatDes ;
+
+	public Plateau(Joueur joueur){
+		this.joueur=joueur;
+		initiallisation();
+	}
     
-	public void initiallisation() {
-		ID = num;
-		num++;
+	private void initiallisation() {
+		// ID = num;
+		// num++;
 		intDefinitions () ;
 		Random random;
 		int caseNumber;
@@ -99,7 +96,7 @@ public class Plateau {
 
 	public void intDefinitions (){
         
-		String file = "C://Users//CBS Computer//Desktop//definitions.txt";
+		String file = "definitions.txt";
         try(BufferedReader br = new BufferedReader(new FileReader(file))) 
         {   int i =0 ;
             String  mot , def;
@@ -115,6 +112,7 @@ public class Plateau {
             e.printStackTrace();
         }
     }
+	
 	public void setCaseActuelle(int caseActuelle) {
 		this.caseActuelle = caseActuelle;
 	}
@@ -122,5 +120,13 @@ public class Plateau {
     public Joueur getJoueur() {
         return this.joueur;
     }
+
+    public void setIsOver(boolean b) {
+		isOver=b;
+    }
+
+	public boolean getIsOver() {
+		return isOver;
+	}
 
 }
