@@ -42,35 +42,27 @@ public class ControleurPlateau {
 	@FXML
 	Button buttonLancerDes;
 	@FXML
-	Label label, maPosition, score;
+	Label label, maPostion, score, message;
 	@FXML
 	Rectangle rectangle;
 	@FXML
 	AnchorPane anchorPane;
-
 	private AnimationTimer timer;
+	private boolean canThrowDice;
 
 	public void init(Plateau plateau) {
 		this.cases = plateau.cases;
 		this.plateau = plateau;
+		canThrowDice=true;
 		this.joueur = plateau.getJoueur();
 		initView();
 		initButtons();
 	}
 
 	private void initView() {
-		maPosition.setStyle("-fx-font-size:25px ;-fx-background-color: #FFD700 ;");
-		score.setStyle("-fx-font-size:25px ;-fx-background-color: #FFD700 ;");
-		label.setTextFill(Color.BLACK);
-		maPosition.setText("1");
-		score.setText("0");
-		rectangle.setArcWidth(500.0);
-		rectangle.setArcHeight(450.0);
-		rectangle.setFill(Color.GOLD);
-		label.setTextFill(Color.GOLD);
-		label.setStyle("-fx-font-size:25px ;");
-		buttonLancerDes.setStyle("-fx-background-color: #FFD700 ;");
-		anchorPane.setStyle("-fx-background-color: #050505");
+		File file = new File("ressources/de" + 6 + ".PNG");
+		de1.setImage(new Image(file.toURI().toString()));
+		de2.setImage(new Image(file.toURI().toString()));
 	}
 
 	private void initButtons() {
@@ -101,7 +93,8 @@ public class ControleurPlateau {
 
 	public void lancer(ActionEvent e) {
 		Random random = new Random();
-		buttonLancerDes.setDisable(true);
+		canThrowDice=false;
+		buttonLancerDes.setDisable(!canThrowDice);
 		Integer d1 = random.nextInt(6) + 1;
 		Integer d2 = random.nextInt(6) + 1;
 		File file = new File("ressources/de" + (d1) + ".PNG");
@@ -110,6 +103,7 @@ public class ControleurPlateau {
 		de2.setImage(new Image(file2.toURI().toString()));
 		resultatDes = d1 + d2;
 		label.setText(resultatDes.toString());
+
 		if (plateau.getCaseActuelle() + resultatDes > 99) {
 			resultatDes = 99 - resultatDes + (99 - plateau.getCaseActuelle()) - plateau.getCaseActuelle();
 		}
@@ -123,7 +117,13 @@ public class ControleurPlateau {
 				public void handle(ActionEvent evenet) {
 					if ((plateau.getCaseActuelle() + resultatDes) == j) {
 						plateau.setCaseActuelle(plateau.getCaseActuelle() + resultatDes);
-						buttonLancerDes.setDisable(false);
+						cases[plateau.getCaseActuelle()].action(plateau, joueur);
+						canThrowDice=true;
+						buttonLancerDes.setDisable(!canThrowDice);
+						message.setTextFill(Color.BLACK);
+					} else if(!canThrowDice) {
+						message.setText("MAUVAISE CASE !");
+						message.setTextFill(Color.RED);
 					}
 				}
 			});
@@ -139,15 +139,23 @@ public class ControleurPlateau {
 						initBouton(buttons[i], i);
 					}
 					styleCaseActuelle(buttons);
-					cases[plateau.getCaseActuelle()].action(plateau, joueur);
-					maPosition.setText(((Integer) (plateau.getCaseActuelle() + 1)).toString());
+					if (cases[plateau.getCaseActuelle()].type == 1 || cases[plateau.getCaseActuelle()].type == 2
+							|| cases[plateau.getCaseActuelle()].type == 6)
+						cases[plateau.getCaseActuelle()].action(plateau, joueur);
+					maPostion.setText(((Integer) (plateau.getCaseActuelle() + 1)).toString());
 					score.setText(((Integer) (joueur.getScoreActuel())).toString());
-				} else
-					buttonLancerDes.setDisable(true);
-			}
+					if (cases[plateau.getCaseActuelle()].type != 0 && message.getTextFill() != Color.RED) {
+						message.setText(cases[plateau.getCaseActuelle()].toString());
+					}
+				} else{
+					canThrowDice=false;
+					buttonLancerDes.setDisable(!canThrowDice);
 
+				}
+			}
 		};
 		timer.start();
+
 	}
 
 	private void styleCaseActuelle(Button[] buttons) {

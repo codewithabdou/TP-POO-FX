@@ -16,7 +16,7 @@ public class CaseMallus extends Case {
 
 	@Override
 	public String toString() {
-		return "CaseMallus [couleur=" + couleur + "]";
+		return "Case Mallus ";
 	};
 
 }

@@ -13,7 +13,7 @@ public class CaseFin extends Case {
     }
     @Override
     public String toString() {
-        return "CaseFin [couleur=" + couleur + "]";
+        return "Case Fin ";
     };
     
 

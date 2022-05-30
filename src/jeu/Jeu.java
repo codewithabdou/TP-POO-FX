@@ -28,12 +28,7 @@ public class Jeu {
     private Stage stage;
     private ArrayList<MyButton> menuButtons = new ArrayList<>();
     private ArrayList<MySubScene> menuSubScenes = new ArrayList<>();
-    private Joueur joueur; // nom joueur mnbe3d tetremplaca b object Joueur;
-
-    /*
-     * hna fi hed screen n7otto l menu te3na
-     * li yji fih : new game / load game / best score / changer compte / quit
-     */
+    private Joueur joueur; 
 
     public Jeu(Stage stage, Joueur joueur) {
         this.stage = stage;

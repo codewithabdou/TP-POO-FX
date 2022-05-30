@@ -20,6 +20,10 @@ public class Joueur implements Serializable{
 	}
 
 
+	public Joueur(String string, int i) {
+	}
+
+
 	public int  lancerDes() {
 		Random random = new Random(); 
 		int  de1 = random.nextInt(6) +1  ;

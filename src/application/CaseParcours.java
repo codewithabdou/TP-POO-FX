@@ -14,7 +14,7 @@ public class CaseParcours extends Case {
 
 	   @Override
 	   public String toString() {
-	      return "CaseParcours [couleur=" + couleur + "]";
+	      return "Case Parcours ";
 	   }; // aucune action
 
 	}

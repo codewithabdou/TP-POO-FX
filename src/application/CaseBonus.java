@@ -12,7 +12,7 @@ public class CaseBonus extends  Case{
 
 	   @Override
 	public String toString() {
-		return "CaseBonus [couleur=" + couleur + "]";
+		return "CaseBonus ";
 	}
 
 	public CaseBonus(int num){
