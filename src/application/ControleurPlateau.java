@@ -15,7 +15,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import jeu.Jeu;
 
+/* TO-DO 
+nzidou subscene te3 congrats w n3touh deux choix , play again wla main menu
+*/
 public class ControleurPlateau {
 	private Case[] cases;
 	private Plateau plateau;
@@ -53,7 +57,7 @@ public class ControleurPlateau {
 	public void init(Plateau plateau) {
 		this.cases = plateau.cases;
 		this.plateau = plateau;
-		canThrowDice=true;
+		canThrowDice = true;
 		this.joueur = plateau.getJoueur();
 		initView();
 		initButtons();
@@ -93,7 +97,7 @@ public class ControleurPlateau {
 
 	public void lancer(ActionEvent e) {
 		Random random = new Random();
-		canThrowDice=false;
+		canThrowDice = false;
 		buttonLancerDes.setDisable(!canThrowDice);
 		Integer d1 = random.nextInt(6) + 1;
 		Integer d2 = random.nextInt(6) + 1;
@@ -102,6 +106,7 @@ public class ControleurPlateau {
 		File file2 = new File("ressources/de" + (d2) + ".PNG");
 		de2.setImage(new Image(file2.toURI().toString()));
 		resultatDes = d1 + d2;
+		resultatDes=99;
 		label.setText(resultatDes.toString());
 
 		if (plateau.getCaseActuelle() + resultatDes > 99) {
@@ -117,11 +122,12 @@ public class ControleurPlateau {
 				public void handle(ActionEvent evenet) {
 					if ((plateau.getCaseActuelle() + resultatDes) == j) {
 						plateau.setCaseActuelle(plateau.getCaseActuelle() + resultatDes);
+						if (cases[plateau.getCaseActuelle()].type != 7)
 						cases[plateau.getCaseActuelle()].action(plateau, joueur);
-						canThrowDice=true;
+						canThrowDice = true;
 						buttonLancerDes.setDisable(!canThrowDice);
 						message.setTextFill(Color.BLACK);
-					} else if(!canThrowDice) {
+					} else if (!canThrowDice) {
 						message.setText("MAUVAISE CASE !");
 						message.setTextFill(Color.RED);
 					}
@@ -140,17 +146,19 @@ public class ControleurPlateau {
 					}
 					styleCaseActuelle(buttons);
 					if (cases[plateau.getCaseActuelle()].type == 1 || cases[plateau.getCaseActuelle()].type == 2
-							|| cases[plateau.getCaseActuelle()].type == 6)
+						|| cases[plateau.getCaseActuelle()].type == 6 || cases[plateau.getCaseActuelle()].type == 7)
 						cases[plateau.getCaseActuelle()].action(plateau, joueur);
 					maPostion.setText(((Integer) (plateau.getCaseActuelle() + 1)).toString());
 					score.setText(((Integer) (joueur.getScoreActuel())).toString());
 					if (cases[plateau.getCaseActuelle()].type != 0 && message.getTextFill() != Color.RED) {
 						message.setText(cases[plateau.getCaseActuelle()].toString());
 					}
-				} else{
-					canThrowDice=false;
+				} else {
+					canThrowDice = false;
 					buttonLancerDes.setDisable(!canThrowDice);
-
+					((Stage)anchorPane.getScene().getWindow()).close();
+					Jeu game = new Jeu(new Stage(), joueur);
+					timer.stop();
 				}
 			}
 		};

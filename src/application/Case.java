@@ -8,4 +8,5 @@ public abstract class Case {
 		return String.valueOf(numero+1) ;
 	}
 	public abstract void action (Plateau plateau , Joueur joueur);
+
 }

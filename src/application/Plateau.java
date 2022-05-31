@@ -23,7 +23,6 @@ public class Plateau {
 		try {
 			initiallisation();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

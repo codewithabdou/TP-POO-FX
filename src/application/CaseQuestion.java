@@ -7,4 +7,8 @@ public abstract class CaseQuestion extends Case {
 
     public abstract void nouvelleQuestion(Plateau plateau);
 
+    public boolean getIsParcourue() {
+        return dejaParcourue;
+    }
+
 }

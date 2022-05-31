@@ -17,8 +17,10 @@ import components.MyButton;
 import components.MySubScene;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -28,6 +30,11 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+/* TO-DO 
+chwiya styling l subscenes 
+and showing error message in red (wrong informations)
+*/
 
 public class Authentification {
     private final int WINDOW_WIDTH = 1024;
@@ -42,7 +49,6 @@ public class Authentification {
     private ArrayList<Joueur> joueurs = new ArrayList<>();
     private final String FONT_PATH = "ressources/kenvector_future.ttf";
 
-
     public Authentification(Stage stage) {
         this.stage = stage;
         initializeView();
@@ -50,9 +56,6 @@ public class Authentification {
         createButtons();
         createSubScenes();
         loadPlayers();
-        for (Joueur joueur : joueurs) {
-            System.out.println(joueur.getID());
-        }
     }
 
     private void initializeView() {
@@ -79,7 +82,7 @@ public class Authentification {
                 inscrireSubScene.move(WINDOW_WIDTH);
             }
         });
-        identifierButton = new MyButton("Sign in", 150, 300);
+        identifierButton = new MyButton("Login", 150, 300);
         identifierButton.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 if (!inscrireSubScene.getIsHidden())
@@ -102,106 +105,70 @@ public class Authentification {
     }
 
     private void createInscrireSubScene() {
+        final int beginTextField = 115;
+        final int spacingTextField = 65;
+        final int beginLbel = 125;
+        final int spacingLabel = 65;
         inscrireSubScene = new MySubScene(WINDOW_WIDTH, (WINDOW_HEIGHT - 500) / 2, 500, 500);
         Label usernameLabel = new Label("user name : ");
-        usernameLabel.setLayoutX(30);
-        usernameLabel.setLayoutY(120);
+        usernameLabel.setLayoutX(50);
+        usernameLabel.setLayoutY(beginLbel);
         try {
             usernameLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
                             FONT_PATH)),
-                    16));
+                    18));
         } catch (FileNotFoundException e) {
-            usernameLabel.setFont(Font.font("Verdana", 16));
+            usernameLabel.setFont(Font.font("Verdana", 18));
         }
 
         TextField usernameTextField = new TextField();
-        usernameTextField.setLayoutX(240);
-        usernameTextField.setLayoutY(115);
-        try {
-            usernameTextField.setFont(Font.loadFont(
-                    new FileInputStream(new File(
-                            FONT_PATH)),
-                    16));
-        } catch (FileNotFoundException e) {
-            usernameTextField.setFont(Font.font("Verdana", 16));
-        }
+        usernameTextField.setLayoutX(220);
+        usernameTextField.setLayoutY(beginTextField);
 
         Label passwordLabel = new Label("password : ");
-        passwordLabel.setLayoutX(30);
-        passwordLabel.setLayoutY(170);
+        passwordLabel.setLayoutX(50);
+        passwordLabel.setLayoutY(beginLbel + spacingLabel);
         try {
             passwordLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
                             FONT_PATH)),
-                    16));
+                    18));
         } catch (FileNotFoundException e) {
-            passwordLabel.setFont(Font.font("Verdana", 16));
+            passwordLabel.setFont(Font.font("Verdana", 18));
         }
 
-        TextField passwordTextField = new TextField();
-        passwordTextField.setLayoutX(240);
-        passwordTextField.setLayoutY(165);
-        try {
-            passwordTextField.setFont(Font.loadFont(
-                    new FileInputStream(new File(
-                            FONT_PATH)),
-                    16));
-        } catch (FileNotFoundException e) {
-            passwordTextField.setFont(Font.font("Verdana", 16));
-        }
+        PasswordField passwordTextField = new PasswordField();
+        passwordTextField.setLayoutX(220);
+        passwordTextField.setLayoutY(beginTextField + spacingTextField);
 
         Label confirmationLabel = new Label("confirmation : ");
         confirmationLabel.setLayoutX(30);
-        confirmationLabel.setLayoutY(220);
+        confirmationLabel.setLayoutY(beginLbel + 2 * spacingLabel);
         try {
             confirmationLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
                             FONT_PATH)),
-                    16));
+                    18));
         } catch (FileNotFoundException e) {
-            confirmationLabel.setFont(Font.font("Verdana", 16));
+            confirmationLabel.setFont(Font.font("Verdana", 18));
         }
 
-        TextField confirmationTextField = new TextField();
-        confirmationTextField.setLayoutX(240);
-        confirmationTextField.setLayoutY(215);
-        try {
-            confirmationTextField.setFont(Font.loadFont(
-                    new FileInputStream(new File(
-                            FONT_PATH)),
-                    16));
-        } catch (FileNotFoundException e) {
-            confirmationTextField.setFont(Font.font("Verdana", 16));
-        }
+        PasswordField confirmationTextField = new PasswordField();
+        confirmationTextField.setLayoutX(220);
+        confirmationTextField.setLayoutY(beginTextField + 2 * spacingTextField);
 
         MyButton confirmButton = new MyButton("Confirm", (500 - 190) / 2, 350);
 
         confirmButton.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent evnet) {
-                Joueur joueur = new Joueur(usernameTextField.getText(), passwordTextField.getText(),
-                        UUID.randomUUID().toString());
-                if (!verifyPlayerExistence(joueur)
-                        && confirmationTextField.getText().compareTo(passwordTextField.getText()) == 0
-                        && passwordTextField.getText().length() >= 8 && joueur.getNom().length() >= 3) {
-                    ObjectOutputStream out;
-                    try {
-                        out = new ObjectOutputStream(
-                                new BufferedOutputStream(new FileOutputStream(new File("Joueurs.dat"))));
-                        for (Joueur joueur2 : joueurs) {
-                            out.writeObject(joueur2);
-                        }
-                        out.writeObject(joueur);
-                        out.close();
-                        Jeu jeu = new Jeu(stage, joueur);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-
+                signUp(usernameTextField.getText(), passwordTextField.getText(), confirmationTextField.getText());
             }
         });
 
+        styleTextField(usernameTextField);
+        styleTextField(passwordTextField);
+        styleTextField(confirmationTextField);
         inscrireSubScene.addToPane(confirmButton);
         inscrireSubScene.addToPane(confirmationLabel);
         inscrireSubScene.addToPane(confirmationTextField);
@@ -214,68 +181,53 @@ public class Authentification {
     }
 
     private void createIdentifierSubScene() {
+        final int beginTextField = 115;
+        final int spacingTextField = 65;
+        final int beginLbel = 125;
+        final int spacingLabel = 65;
         identifierSubScene = new MySubScene(WINDOW_WIDTH, (WINDOW_HEIGHT - 500) / 2, 500, 500);
         Label usernameLabel = new Label("user name : ");
-        usernameLabel.setLayoutX(30);
-        usernameLabel.setLayoutY(120);
+        usernameLabel.setLayoutX(50);
+        usernameLabel.setLayoutY(beginLbel);
         try {
             usernameLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
                             FONT_PATH)),
-                    16));
+                    18));
         } catch (FileNotFoundException e) {
-            usernameLabel.setFont(Font.font("Verdana", 16));
+            usernameLabel.setFont(Font.font("Verdana", 18));
         }
 
         TextField usernameTextField = new TextField();
-        usernameTextField.setLayoutX(240);
-        usernameTextField.setLayoutY(115);
-        try {
-            usernameTextField.setFont(Font.loadFont(
-                    new FileInputStream(new File(
-                            FONT_PATH)),
-                    16));
-        } catch (FileNotFoundException e) {
-            usernameTextField.setFont(Font.font("Verdana", 16));
-        }
+        usernameTextField.setLayoutX(220);
+        usernameTextField.setLayoutY(beginTextField);
 
         Label passwordLabel = new Label("password : ");
-        passwordLabel.setLayoutX(30);
-        passwordLabel.setLayoutY(170);
+        passwordLabel.setLayoutX(50);
+        passwordLabel.setLayoutY(beginLbel + spacingLabel);
         try {
             passwordLabel.setFont(Font.loadFont(
                     new FileInputStream(new File(
                             FONT_PATH)),
-                    16));
+                    18));
         } catch (FileNotFoundException e) {
-            passwordLabel.setFont(Font.font("Verdana", 16));
+            passwordLabel.setFont(Font.font("Verdana", 18));
         }
 
-        TextField passwordTextField = new TextField();
-        passwordTextField.setLayoutX(240);
-        passwordTextField.setLayoutY(165);
-        try {
-            passwordTextField.setFont(Font.loadFont(
-                    new FileInputStream(new File(
-                            FONT_PATH)),
-                    16));
-        } catch (FileNotFoundException e) {
-            passwordTextField.setFont(Font.font("Verdana", 16));
-        }
+        PasswordField passwordTextField = new PasswordField();
+        passwordTextField.setLayoutX(220);
+        passwordTextField.setLayoutY(beginTextField + spacingTextField);
 
         MyButton confirmButton = new MyButton("Continue", (500 - 190) / 2, 350);
 
         confirmButton.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent evnet) {
-                if (getSelectedPlayer(usernameTextField.getText()) != null) {
-                    Joueur joueur = getSelectedPlayer(usernameTextField.getText());
-                    if (joueur.getPassword().compareTo(passwordTextField.getText()) == 0) {
-                        Jeu jeu = new Jeu(stage, joueur);
-                    }
-                }
+                login(usernameTextField.getText(), passwordTextField.getText());
             }
         });
 
+        styleTextField(usernameTextField);
+        styleTextField(passwordTextField);
         identifierSubScene.addToPane(confirmButton);
         identifierSubScene.addToPane(usernameLabel);
         identifierSubScene.addToPane(usernameTextField);
@@ -298,7 +250,7 @@ public class Authentification {
                 }
             }
         } catch (IOException e) {
-            //e.printStackTrace();
+            // e.printStackTrace();
         }
     }
 
@@ -318,6 +270,47 @@ public class Authentification {
             }
         }
         return null;
+    }
+
+    private void login(String userName, String password) {
+        System.out.println(userName);
+        if (getSelectedPlayer(userName) != null) {
+            Joueur joueur = getSelectedPlayer(userName);
+            if (joueur.getPassword().compareTo(password) == 0) {
+                Jeu jeu = new Jeu(stage, joueur);
+            }
+        }
+
+    }
+
+    private void signUp(String userName, String password, String confirmation) {
+        Joueur joueur = new Joueur(userName, password,
+                UUID.randomUUID().toString());
+        if (!verifyPlayerExistence(joueur)
+                && confirmation.compareTo(password) == 0
+                && password.length() >= 8 && joueur.getNom().length() >= 3) {
+            ObjectOutputStream out;
+            try {
+                out = new ObjectOutputStream(
+                        new BufferedOutputStream(new FileOutputStream(new File("Joueurs.dat"))));
+                for (Joueur joueur2 : joueurs) {
+                    out.writeObject(joueur2);
+                }
+                out.writeObject(joueur);
+                out.close();
+                Authentification auth = new Authentification(stage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    private void styleTextField(TextField input) {
+        input.setPrefWidth(250);
+        input.setAlignment(Pos.CENTER_LEFT);
+        input.setStyle(
+                "-fx-font-size: 20; -fx-font-weight: bold; -fx-border-width: 1;-fx-border-radius: 20;-fx-background-color: black;-fx-text-fill: #ffd700;");
     }
 
 }

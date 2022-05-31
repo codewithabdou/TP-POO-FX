@@ -1,6 +1,11 @@
 package jeu;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 import application.ControleurPlateau;
@@ -8,16 +13,19 @@ import application.Joueur;
 import application.Plateau;
 import components.MyButton;
 import components.MySubScene;
+import components.Score;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Jeu {
@@ -28,7 +36,10 @@ public class Jeu {
     private Stage stage;
     private ArrayList<MyButton> menuButtons = new ArrayList<>();
     private ArrayList<MySubScene> menuSubScenes = new ArrayList<>();
-    private Joueur joueur; 
+    private Joueur joueur;
+    private Score bestScore;
+    private final String FONT_PATH = "ressources/kenvector_future.ttf";
+
 
     public Jeu(Stage stage, Joueur joueur) {
         this.stage = stage;
@@ -41,6 +52,7 @@ public class Jeu {
         mainScene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
         stage.setScene(mainScene);
         createBackground();
+        loadBestScore();
         createMenu();
         stage.show();
     }
@@ -78,9 +90,29 @@ public class Jeu {
         menuSubScenes.add(newGameSubScene);
         MySubScene oldGameSubScene = new MySubScene(WINDOW_WIDTH, (WINDOW_HEIGHT - 500) / 2, 500, 500);
         menuSubScenes.add(oldGameSubScene);
+        createbestScoreSubScene();
+        root.getChildren().addAll(newGameSubScene, oldGameSubScene);
+    }
+
+    private void createbestScoreSubScene() {
+        /*
+         * TO-DO :
+         * need more styling
+         */
         MySubScene bestScoreSubScene = new MySubScene(WINDOW_WIDTH, (WINDOW_HEIGHT - 500) / 2, 500, 500);
+        Label bestPlayerName = new Label("Score owner :   " + "  " + bestScore.getName());
+        if(bestScore.getName().compareTo("name")==0) bestPlayerName.setText("Score owner :   unknown  " );
+        bestPlayerName.setLayoutX(50);
+        bestPlayerName.setLayoutY(150);
+        Label bestPlayerScore = new Label("Best Score :   " + "  " + bestScore.getScore());
+        bestPlayerScore.setLayoutX(50);
+        bestPlayerScore.setLayoutY(200);
+        styleLabel(bestPlayerName);
+        styleLabel(bestPlayerScore);
+        bestScoreSubScene.addToPane(bestPlayerName);
+        bestScoreSubScene.addToPane(bestPlayerScore);
         menuSubScenes.add(bestScoreSubScene);
-        root.getChildren().addAll(newGameSubScene, oldGameSubScene, bestScoreSubScene);
+        root.getChildren().add(bestScoreSubScene);
     }
 
     private void onPressHandler() {
@@ -98,7 +130,6 @@ public class Jeu {
                             if (!subScene.getIsHidden()
                                     || subScene.equals(menuSubScenes.get(menuButtons.indexOf(button)))) {
                                 subScene.move(WINDOW_WIDTH);
-                                System.out.println(menuSubScenes.indexOf(subScene));
                             }
                         }
                     }
@@ -108,19 +139,39 @@ public class Jeu {
         }
     }
 
-    private void commencer(){
-        Plateau plateau=new Plateau(joueur ) ;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("scenePlateau.fxml")) ; 
+    private void commencer() {
+        Plateau plateau = new Plateau(joueur);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("scenePlateau.fxml"));
         try {
             root = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ControleurPlateau ControleurPlateau = loader.getController() ;
-        ControleurPlateau.init( plateau);
+        ControleurPlateau ControleurPlateau = loader.getController();
+        ControleurPlateau.init(plateau);
         stage.setResizable(true);
         stage.setScene(new Scene(root));
         stage.setFullScreen(true);
     }
-    
+
+    private void loadBestScore() {
+        ObjectInputStream file;
+        try {
+            file = new ObjectInputStream(
+                    new BufferedInputStream(new FileInputStream(new File("score.dat"))));
+            try {
+                bestScore = (Score) file.readObject();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void styleLabel(Label label){
+        label.setFont(Font.font("Verdana", 25));
+    }
+
 }
