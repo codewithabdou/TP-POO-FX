@@ -2,7 +2,7 @@ package components;
 
 import java.io.Serializable;
 
-public class Score implements Serializable{
+public class Score implements Serializable {
     private int score;
     private String name;
 

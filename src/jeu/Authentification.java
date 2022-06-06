@@ -273,7 +273,6 @@ public class Authentification {
     }
 
     private void login(String userName, String password) {
-        System.out.println(userName);
         if (getSelectedPlayer(userName) != null) {
             Joueur joueur = getSelectedPlayer(userName);
             if (joueur.getPassword().compareTo(password) == 0) {

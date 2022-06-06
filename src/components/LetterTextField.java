@@ -11,11 +11,13 @@ import javafx.scene.control.TextField;
 /**
  * A text field, which restricts the user's input.
  * <p>
- * The restriction can either be a maximal number of characters which the user is allowed to input
+ * The restriction can either be a maximal number of characters which the user
+ * is allowed to input
  * or a regular expression class, which contains allowed characters.
  * </p>
  * <p/>
  * <b>Sample, which restricts the input to maximal 10 numeric characters</b>:
+ * 
  * <pre>
  * {@code
  * RestrictiveTextField textField = new RestrictiveTextField();
@@ -93,7 +95,8 @@ public class LetterTextField extends TextField {
     }
 
     /**
-     * Gets a regular expression character class which restricts the user input.<br/>
+     * Gets a regular expression character class which restricts the user
+     * input.<br/>
      *
      * @return The regular expression.
      * @see #getRestrict()
@@ -103,7 +106,8 @@ public class LetterTextField extends TextField {
     }
 
     /**
-     * Sets a regular expression character class which restricts the user input.<br/>
+     * Sets a regular expression character class which restricts the user
+     * input.<br/>
      * E.g. [0-9] only allows numeric values.
      *
      * @param restrict The regular expression.

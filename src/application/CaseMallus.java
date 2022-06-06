@@ -5,7 +5,7 @@ public class CaseMallus extends Case {
 
 	public CaseMallus(int num) {
 		numero = num;
-		this.type=2 ;
+		this.type = 2;
 	}
 
 	public void action(Plateau plateau, Joueur joueur) {

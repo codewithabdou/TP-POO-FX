@@ -23,6 +23,7 @@ public class CaseFin extends Case {
     public void action(Plateau plateau, Joueur joueur) {
         plateau.setIsOver(true);
         Score score;
+        boolean betterScore = false;
         ObjectInputStream file;
         try {
             file = new ObjectInputStream(
@@ -30,27 +31,27 @@ public class CaseFin extends Case {
             try {
                 score = (Score) file.readObject();
                 if (score.getScore() < joueur.getScoreActuel()) {
-                    file.close();
-                    score = new Score(joueur.getScoreActuel(), joueur.getNom());
-                    ObjectOutputStream file1;
-                    try {
-                        file1 = new ObjectOutputStream(
-                                new BufferedOutputStream(new FileOutputStream(new File("score.dat"))));
-                        file1.writeObject(score);
-                        file1.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
+                    betterScore = true;
                 }
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
             file.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            betterScore = true;
         }
 
+        if (betterScore) {
+            ObjectOutputStream file1;
+            try {
+                file1 = new ObjectOutputStream(
+                        new BufferedOutputStream(new FileOutputStream(new File("score.dat"))));
+                file1.writeObject(new Score(joueur.getScoreActuel(), joueur.getNom()));
+                file1.close();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
     }
 
     @Override

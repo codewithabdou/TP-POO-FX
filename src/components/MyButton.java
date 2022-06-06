@@ -13,8 +13,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class MyButton extends Button {
-    private final String FONT_PATH ="ressources/kenvector_future.ttf";
-    public MyButton(String text,int x ,int y){
+    private final String FONT_PATH = "ressources/kenvector_future.ttf";
+
+    public MyButton(String text, int x, int y) {
         setText(text);
         setFont();
         setPrefHeight(49);
@@ -25,34 +26,35 @@ public class MyButton extends Button {
         eventListenner();
     }
 
-
-    private void setFont(){
+    private void setFont() {
         try {
-            setFont(Font.loadFont(new FileInputStream(FONT_PATH),20));
+            setFont(Font.loadFont(new FileInputStream(FONT_PATH), 20));
         } catch (FileNotFoundException e) {
-            setFont(Font.font("vernada",23));
+            setFont(Font.font("vernada", 23));
         }
     }
 
-    private void setPressedStyle(){
+    private void setPressedStyle() {
 
         setPrefHeight(45);
-        setLayoutY(getLayoutY()+4);
-        Image image=new Image("file:ressources/yellow_button01.png");
-        Background background=new Background(new BackgroundImage(image,BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER,BackgroundSize.DEFAULT));
+        setLayoutY(getLayoutY() + 4);
+        Image image = new Image("file:ressources/yellow_button01.png");
+        Background background = new Background(new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT));
         setBackground(background);
     }
 
-    private void setReleasedStyle(){
+    private void setReleasedStyle() {
         setPrefHeight(49);
-        setLayoutY(getLayoutY()-4);
-        Image image=new Image("file:ressources/yellow_button00.png");
-        Background background=new Background(new BackgroundImage(image,BackgroundRepeat.REPEAT,BackgroundRepeat.REPEAT,BackgroundPosition.CENTER,BackgroundSize.DEFAULT));
+        setLayoutY(getLayoutY() - 4);
+        Image image = new Image("file:ressources/yellow_button00.png");
+        Background background = new Background(new BackgroundImage(image, BackgroundRepeat.REPEAT,
+                BackgroundRepeat.REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT));
         setBackground(background);
 
     }
 
-    private void eventListenner(){
+    private void eventListenner() {
         setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent actionEvent) {
@@ -69,7 +71,7 @@ public class MyButton extends Button {
         setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent actionEvent) {
-                setEffect(new DropShadow(5,Color.WHITE));
+                setEffect(new DropShadow(5, Color.WHITE));
             }
         });
 
@@ -81,4 +83,3 @@ public class MyButton extends Button {
         });
     }
 }
-

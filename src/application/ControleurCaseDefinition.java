@@ -1,8 +1,5 @@
 package application;
 
-import java.util.function.Consumer;
-
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -23,15 +20,15 @@ public class ControleurCaseDefinition {
     private Button submitButton;
     private HBox answer;
     private String mot;
-    private String word="";
+    private String word = "";
     private Joueur joueur;
     private Plateau plateau;
     private Stage stage;
 
-    public void init(String definition, String mot,Joueur joueur,Plateau plateau,Stage stage) {
-        this.joueur=joueur;
-        this.plateau=plateau;
-        this.stage=stage;
+    public void init(String definition, String mot, Joueur joueur, Plateau plateau, Stage stage) {
+        this.joueur = joueur;
+        this.plateau = plateau;
+        this.stage = stage;
         definitionLabel.setText(definition);
         this.mot = mot;
         createAnswerField();
@@ -56,7 +53,7 @@ public class ControleurCaseDefinition {
                     this.word = this.word.substring(0, j) + " " + this.word.substring(j + 1);
             });
             answer.getChildren().add(letter);
-            word+=" ";
+            word += " ";
         }
         answer.setAlignment(Pos.CENTER);
         answer.setPrefWidth(500);

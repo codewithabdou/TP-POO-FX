@@ -1,12 +1,19 @@
 package application;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Random;
 
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -17,9 +24,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import jeu.Jeu;
 
-/* TO-DO 
-nzidou subscene te3 congrats w n3touh deux choix , play again wla main menu
-*/
 public class ControleurPlateau {
 	private Case[] cases;
 	private Plateau plateau;
@@ -41,7 +45,7 @@ public class ControleurPlateau {
 			button79, button80, button81, button82,
 			button83, button84, button85, button86, button87, button88, button89, button90, button91, button92,
 			button93, button94, button95, button96, button97, button98,
-			button99, button100;
+			button99, button100, suspendreButton;
 	private Integer resultatDes;
 	@FXML
 	Button buttonLancerDes;
@@ -51,6 +55,7 @@ public class ControleurPlateau {
 	Rectangle rectangle;
 	@FXML
 	AnchorPane anchorPane;
+	Parent root;
 	private AnimationTimer timer;
 	private boolean canThrowDice;
 
@@ -61,12 +66,47 @@ public class ControleurPlateau {
 		this.joueur = plateau.getJoueur();
 		initView();
 		initButtons();
+		suspendreButtonPressedHandler();
 	}
 
 	private void initView() {
 		File file = new File("ressources/de" + 6 + ".PNG");
 		de1.setImage(new Image(file.toURI().toString()));
 		de2.setImage(new Image(file.toURI().toString()));
+	}
+
+	private void suspendreButtonPressedHandler() {
+		suspendreButton.setOnAction(new EventHandler<ActionEvent>() {
+
+			public void handle(ActionEvent e) {
+				ObjectOutputStream out;
+				boolean jobDone = false;
+				try {
+					out = new ObjectOutputStream(
+							new BufferedOutputStream(new FileOutputStream(new File("Plateaux.dat"))));
+					if (plateau.getPlateaux().isEmpty()) {
+						out.writeObject(plateau);
+					} else {
+						for (Plateau p : plateau.getPlateaux()) {
+							if (p.getID().compareTo(plateau.getID()) == 0) {
+								out.writeObject(plateau);
+								jobDone = true;
+							} else
+								out.writeObject(p);
+						}
+						if (!jobDone)
+							out.writeObject(plateau);
+					}
+					out.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} finally {
+					Stage stage = (Stage) anchorPane.getScene().getWindow();
+					Jeu jeu = new Jeu(stage, joueur);
+				}
+			}
+		});
 	}
 
 	private void initButtons() {
@@ -96,6 +136,7 @@ public class ControleurPlateau {
 	}
 
 	public void lancer(ActionEvent e) {
+
 		Random random = new Random();
 		canThrowDice = false;
 		buttonLancerDes.setDisable(!canThrowDice);
@@ -106,9 +147,7 @@ public class ControleurPlateau {
 		File file2 = new File("ressources/de" + (d2) + ".PNG");
 		de2.setImage(new Image(file2.toURI().toString()));
 		resultatDes = d1 + d2;
-		resultatDes=99;
 		label.setText(resultatDes.toString());
-
 		if (plateau.getCaseActuelle() + resultatDes > 99) {
 			resultatDes = 99 - resultatDes + (99 - plateau.getCaseActuelle()) - plateau.getCaseActuelle();
 		}
@@ -123,7 +162,7 @@ public class ControleurPlateau {
 					if ((plateau.getCaseActuelle() + resultatDes) == j) {
 						plateau.setCaseActuelle(plateau.getCaseActuelle() + resultatDes);
 						if (cases[plateau.getCaseActuelle()].type != 7)
-						cases[plateau.getCaseActuelle()].action(plateau, joueur);
+							cases[plateau.getCaseActuelle()].action(plateau, joueur);
 						canThrowDice = true;
 						buttonLancerDes.setDisable(!canThrowDice);
 						message.setTextFill(Color.BLACK);
@@ -146,8 +185,16 @@ public class ControleurPlateau {
 					}
 					styleCaseActuelle(buttons);
 					if (cases[plateau.getCaseActuelle()].type == 1 || cases[plateau.getCaseActuelle()].type == 2
-						|| cases[plateau.getCaseActuelle()].type == 6 || cases[plateau.getCaseActuelle()].type == 7)
+							|| cases[plateau.getCaseActuelle()].type == 6 || cases[plateau.getCaseActuelle()].type == 0
+							|| cases[plateau.getCaseActuelle()].type == 7 || cases[plateau.getCaseActuelle()].type == 3) {
 						cases[plateau.getCaseActuelle()].action(plateau, joueur);
+						canThrowDice = true;
+						buttonLancerDes.setDisable(!canThrowDice);
+					} else {
+						canThrowDice = false;
+						buttonLancerDes.setDisable(!canThrowDice);
+						resultatDes=0;
+					}
 					maPostion.setText(((Integer) (plateau.getCaseActuelle() + 1)).toString());
 					score.setText(((Integer) (joueur.getScoreActuel())).toString());
 					if (cases[plateau.getCaseActuelle()].type != 0 && message.getTextFill() != Color.RED) {
@@ -156,10 +203,22 @@ public class ControleurPlateau {
 				} else {
 					canThrowDice = false;
 					buttonLancerDes.setDisable(!canThrowDice);
-					((Stage)anchorPane.getScene().getWindow()).close();
-					Jeu game = new Jeu(new Stage(), joueur);
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("Gagner.fxml"));
+					try {
+						root = loader.load();
+					} catch (IOException e) {
+
+						e.printStackTrace();
+					}
+					ControleurGagner Cont = loader.getController();
+					Scene scene = new Scene(root, 502, 499);
+					Stage stage1 = new Stage();
+					Cont.init(plateau.getJoueur(), ((Stage) anchorPane.getScene().getWindow()), stage1);
+					stage1.setScene(scene);
+					stage1.show();
 					timer.stop();
 				}
+
 			}
 		};
 		timer.start();

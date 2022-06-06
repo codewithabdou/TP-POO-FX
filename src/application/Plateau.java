@@ -4,27 +4,37 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Random;
-import javafx.scene.image.Image;
 
-public class Plateau {
+public class Plateau implements Serializable {
 	private Joueur joueur;
 	private boolean isOver = false;
 	private int caseActuelle = 0;
 	Case[] cases = new Case[100];
 	private String[] definitions = new String[10];
 	private String[] motDefinitions = new String[10];
-	private Image[] images = new Image[8];
+	private String[] images = new String[8];
 	private String[] motImages = new String[8];
 	private static Integer image = 0;
+	private static Integer definition = 0;
+	private String ID;
+	private ArrayList<Plateau> plateaux;
 
-	public Plateau(Joueur joueur) {
+	public Plateau(Joueur joueur, ArrayList<Plateau> plateaux) {
+		this.plateaux = plateaux;
 		this.joueur = joueur;
+		this.ID = joueur.getID();
 		try {
 			initiallisation();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public ArrayList<Plateau> getPlateaux() {
+		return plateaux;
 	}
 
 	private void initiallisation() throws IOException {
@@ -39,7 +49,18 @@ public class Plateau {
 			while (!jobDone) {
 				random = new Random();
 				caseNumber = random.nextInt(100);
-				if (cases[caseNumber] == null) {
+				if (caseNumber <= 97) {
+					if (cases[caseNumber + 2] != null && cases[caseNumber] == null) {
+						if (cases[caseNumber + 2].type != 2) {
+							cases[caseNumber] = new CaseBonus(caseNumber);
+							jobDone = true;
+						}
+					} else if (cases[caseNumber + 2] == null && cases[caseNumber] == null) {
+						cases[caseNumber] = new CaseBonus(caseNumber);
+						jobDone = true;
+					}
+
+				} else if (cases[caseNumber] == null) {
 					cases[caseNumber] = new CaseBonus(caseNumber);
 					jobDone = true;
 				}
@@ -48,7 +69,18 @@ public class Plateau {
 			while (!jobDone) {
 				random = new Random();
 				caseNumber = random.nextInt(100);
-				if (cases[caseNumber] == null) {
+				if (caseNumber <= 97) {
+					if (cases[caseNumber + 2] != null && cases[caseNumber] == null) {
+						if (cases[caseNumber + 2].type != 2) {
+							cases[caseNumber] = initCaseImage(caseNumber);
+							jobDone = true;
+						}
+					} else if (cases[caseNumber + 2] == null && cases[caseNumber] == null) {
+						cases[caseNumber] = initCaseImage(caseNumber);
+						jobDone = true;
+					}
+
+				} else if (cases[caseNumber] == null) {
 					cases[caseNumber] = initCaseImage(caseNumber);
 					jobDone = true;
 				}
@@ -57,8 +89,32 @@ public class Plateau {
 			while (!jobDone) {
 				random = new Random();
 				caseNumber = random.nextInt(100);
-				if (cases[caseNumber] == null) {
+				if (caseNumber <= 97) {
+					if (cases[caseNumber + 2] != null && cases[caseNumber] == null) {
+						if (cases[caseNumber + 2].type != 2) {
+							cases[caseNumber] = new CaseDefinition(caseNumber, definitions[i], motDefinitions[i]);
+							definition++; // la derniere question prise ça nous servira pour genere une nouvelle
+											// question
+											// ;
+							if (definition == 10)
+								definition = 0;
+							jobDone = true;
+						}
+					} else if (cases[caseNumber + 2] == null && cases[caseNumber] == null) {
+						cases[caseNumber] = new CaseDefinition(caseNumber, definitions[i], motDefinitions[i]);
+						definition++; // la derniere question prise ça nous servira pour genere une nouvelle question
+										// ;
+						if (definition == 10)
+							definition = 0;
+						jobDone = true;
+					}
+
+				} else if (cases[caseNumber] == null) {
 					cases[caseNumber] = new CaseDefinition(caseNumber, definitions[i], motDefinitions[i]);
+					definition++; // la derniere question prise ça nous servira pour genere une nouvelle question
+									// ;
+					if (definition == 10)
+						definition = 0;
 					jobDone = true;
 				}
 			}
@@ -66,7 +122,18 @@ public class Plateau {
 			while (!jobDone) {
 				random = new Random();
 				caseNumber = random.nextInt(100);
-				if (cases[caseNumber] == null) {
+				if (caseNumber >= 2) {
+					if (cases[caseNumber - 2] != null && cases[caseNumber] == null) {
+						if ((cases[caseNumber - 2].type != 4 && cases[caseNumber - 2].type != 5
+								&& cases[caseNumber - 2].type != 1)) {
+							cases[caseNumber] = new CaseMallus(caseNumber);
+							jobDone = true;
+						}
+					} else if (cases[caseNumber - 2] == null && cases[caseNumber] == null) {
+						cases[caseNumber] = new CaseMallus(caseNumber);
+						jobDone = true;
+					}
+				} else if (cases[caseNumber] == null) {
 					cases[caseNumber] = new CaseMallus(caseNumber);
 					jobDone = true;
 				}
@@ -89,7 +156,7 @@ public class Plateau {
 			}
 		}
 		cases[99] = new CaseFin();
-		
+
 	}
 
 	public int getCaseActuelle() {
@@ -104,8 +171,7 @@ public class Plateau {
 		while ((mo = br.readLine()) != null) {
 			motImages[i] = mo;
 			File file1 = new File("ressources//images//image" + (i + 1) + ".PNG");
-			Image myImage = new Image(file1.toURI().toString());
-			images[i] = myImage;
+			images[i] = file1.toURI().toString();
 			i++;
 		}
 		br.close();
@@ -124,7 +190,6 @@ public class Plateau {
 				i++;
 			}
 		} catch (IOException e) {
-			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
 	}
@@ -138,7 +203,7 @@ public class Plateau {
 		Random random = new Random();
 		mot = motImages[image];
 
-		Image[] imagesChoix = new Image[4];
+		String[] imagesChoix = new String[4];
 		int j = random.nextInt(4);
 		imagesChoix[j] = images[image];
 		int m = 0;
@@ -157,6 +222,8 @@ public class Plateau {
 		}
 		CaseImage c = new CaseImage(ID, imagesChoix, j, mot);
 		image++;
+		if (image == 8)
+			image = 0;
 		return (c);
 	}
 
@@ -169,7 +236,26 @@ public class Plateau {
 	}
 
 	public boolean getIsOver() {
-		return isOver;
+		return (isOver);
 	}
 
+	public String getDefinitions(int i) {
+		return definitions[i];
+	}
+
+	public String getMotDefinitions(int i) {
+		return motDefinitions[i];
+	}
+
+	public Integer getDefinition() {
+		return definition;
+	}
+
+	public void setDefinition(Integer definition) {
+		Plateau.definition = definition;
+	}
+
+	public String getID() {
+		return ID;
+	}
 }

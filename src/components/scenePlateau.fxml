@@ -872,10 +872,5 @@
       <Label layoutX="1251.0" layoutY="107.0" opacity="0.35" prefHeight="18.0" prefWidth="97.0" style="-fx-font-size: 25; -fx-text-fill: #FFD700; -fx-background-radius: 100;" text="SCORE" />
       <Label graphicTextGap="10.0" layoutX="1229.0" layoutY="191.0" opacity="0.31" prefHeight="36.0" prefWidth="118.0" style="-fx-font-size: 25; -fx-text-fill: #FFD700; -fx-background-radius: 100;" text="POSITION" />
       <Label layoutX="1323.0" layoutY="266.0" opacity="0.3" prefHeight="0.0" prefWidth="112.0" style="-fx-font-size: 25; -fx-text-fill: #FFD700; -fx-background-radius: 100;" text="MESSAGE" />
-      <Button id="suspendreButton" fx:id="suspendreButton" layoutX="34.0" layoutY="29.0" mnemonicParsing="false" style="-fx-background-color: #ffd700; -fx-background-radius: 30;" text="Save &amp; Quit">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
