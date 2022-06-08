@@ -69,7 +69,7 @@ public class ControleurCaseDefinition {
             public void handle(ActionEvent e) {
                 if (isRightAnswer()) {
                     joueur.setScoreActuel(joueur.getScoreActuel() + 10);
-                    plateau.setCaseActuelle(plateau.getCaseActuelle() + 2);
+                    plateau.setCaseActuelle(plateau.getCaseActuelle() + 4);
                 } else {
                     joueur.setScoreActuel(joueur.getScoreActuel() - 10);
                 }

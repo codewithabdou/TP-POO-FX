@@ -24,6 +24,7 @@ public class CaseDefinition extends CaseQuestion {
 			ControleurCaseDefinition Controler = loader.getController();
 			Scene scene = new Scene(root, 700, 600);
 			Stage stage = new Stage();
+			stage.setTitle("Case Definition");
 			Controler.init(definition, mot, joueur, plateau, stage);
 			stage.setScene(scene);
 			stage.show();

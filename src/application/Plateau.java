@@ -60,9 +60,6 @@ public class Plateau implements Serializable {
 						jobDone = true;
 					}
 
-				} else if (cases[caseNumber] == null) {
-					cases[caseNumber] = new CaseBonus(caseNumber);
-					jobDone = true;
 				}
 			}
 			jobDone = false;
@@ -80,16 +77,13 @@ public class Plateau implements Serializable {
 						jobDone = true;
 					}
 
-				} else if (cases[caseNumber] == null) {
-					cases[caseNumber] = initCaseImage(caseNumber);
-					jobDone = true;
 				}
 			}
 			jobDone = false;
 			while (!jobDone) {
 				random = new Random();
 				caseNumber = random.nextInt(100);
-				if (caseNumber <= 97) {
+				if (caseNumber <= 95) {
 					if (cases[caseNumber + 2] != null && cases[caseNumber] == null) {
 						if (cases[caseNumber + 2].type != 2) {
 							cases[caseNumber] = new CaseDefinition(caseNumber, definitions[i], motDefinitions[i]);
@@ -109,13 +103,6 @@ public class Plateau implements Serializable {
 						jobDone = true;
 					}
 
-				} else if (cases[caseNumber] == null) {
-					cases[caseNumber] = new CaseDefinition(caseNumber, definitions[i], motDefinitions[i]);
-					definition++; // la derniere question prise ça nous servira pour genere une nouvelle question
-									// ;
-					if (definition == 10)
-						definition = 0;
-					jobDone = true;
 				}
 			}
 			jobDone = false;
@@ -133,9 +120,6 @@ public class Plateau implements Serializable {
 						cases[caseNumber] = new CaseMallus(caseNumber);
 						jobDone = true;
 					}
-				} else if (cases[caseNumber] == null) {
-					cases[caseNumber] = new CaseMallus(caseNumber);
-					jobDone = true;
 				}
 			}
 			jobDone = false;

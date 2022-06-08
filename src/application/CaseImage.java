@@ -33,6 +33,7 @@ public class CaseImage extends CaseQuestion {
 			ControleurCaseImage Cont = loader.getController();
 			Scene scene = new Scene(root, 700, 600);
 			Stage stage = new Stage();
+			stage.setTitle("Case Image");
 			Cont.init(imagesUri, imageCorrecte, mot, stage, joueur, plateau);
 			stage.setScene(scene);
 			stage.show();

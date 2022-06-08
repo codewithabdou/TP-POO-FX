@@ -212,6 +212,7 @@ public class Jeu {
     }
 
     private void commencer() {
+        joueur.setScoreActuel(0);
         Plateau plateau = new Plateau(joueur, plateauxList);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("scenePlateau.fxml"));
         try {

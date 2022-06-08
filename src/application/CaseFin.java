@@ -52,6 +52,8 @@ public class CaseFin extends Case {
                 e1.printStackTrace();
             }
         }
+        if (joueur.getScoreActuel() > joueur.getMeilleurScore())
+            joueur.setMeilleurScore(joueur.getScoreActuel());
     }
 
     @Override

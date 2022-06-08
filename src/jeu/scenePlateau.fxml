@@ -864,7 +864,7 @@
             <Font size="17.0" />
          </font></Label>
       <Label layoutX="1323.0" layoutY="241.0" prefHeight="0.0" prefWidth="112.0" style="-fx-font-size: 25; -fx-text-fill: #FFD700; -fx-background-radius: 100;" text="MESSAGE" />
-      <Label alignment="CENTER" layoutX="236.0" layoutY="54.0" prefHeight="36.0" prefWidth="366.0" style="-fx-font-size: 25; -fx-text-fill: #FFD700; -fx-background-radius: 100;" text="nom du jeu">
+      <Label alignment="CENTER" layoutX="352.0" layoutY="40.0" prefHeight="36.0" prefWidth="366.0" style="-fx-font-size: 40; -fx-text-fill: #FFD700; -fx-background-radius: 100; -fx-font-weight: bold;" text="English Dice">
          <font>
             <Font size="64.0" />
          </font>
